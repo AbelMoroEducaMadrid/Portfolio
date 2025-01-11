@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 import { Github, Linkedin, FileText } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'

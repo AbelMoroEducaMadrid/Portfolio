@@ -4,7 +4,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: '.',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/yourusername.github.io' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/yourusername.github.io' : '',
 }
 
 module.exports = nextConfig
+

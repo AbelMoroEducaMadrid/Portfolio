@@ -29,3 +29,6 @@ export function useLanguage() {
   return context
 }
 
+// Server-safe version of the context
+export const LanguageContextSafe = LanguageContext
+

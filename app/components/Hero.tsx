@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useLanguage } from '../contexts/LanguageContext'
@@ -6,6 +8,7 @@ import translations from '../utils/translations'
 export default function Hero() {
   const { language } = useLanguage()
   const t = translations[language]
+
   return (
     <section className="py-12 sm:py-20 px-6 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
       <div className="absolute inset-0 opacity-5 dark:opacity-10 z-0">
