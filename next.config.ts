@@ -4,8 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/abelmoroeducamadrid.github.io' : '',
-  basePath: process.env.NODE_ENV === 'production' ? '/abelmoroeducamadrid.github.io' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/abelmoroeducamadrid.github.io/' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/abelmoroeducamadrid.github.io/' : '',
 }
 
 module.exports = nextConfig
