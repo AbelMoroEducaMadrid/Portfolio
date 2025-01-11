@@ -27,7 +27,7 @@ export default function Header() {
           className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
         >
           <Image
-            src={language === 'en' ? '/spain-flag.svg' : '/uk-flag.svg'}
+            src={language === 'en' ? '/Portfolio/spain-flag.svg' : '/Portfolio/uk-flag.svg'}
             alt={language === 'en' ? 'Spanish' : 'English'}
             width={24}
             height={24}

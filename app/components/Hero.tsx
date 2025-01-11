@@ -30,7 +30,7 @@ export default function Hero() {
         className="w-2/3 md:w-1/3 z-10"
       >
         <Image
-          src="/profile.png"
+          src="/Portfolio/profile.png"
           alt="Abel Moro Paje"
           width={300}
           height={300}
