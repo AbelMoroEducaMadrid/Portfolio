@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <header className="py-4 px-6 flex justify-between items-center">
-      <h1 className="text-xl sm:text-2xl font-bold">Your Name</h1>
+      <h1 className="text-xl sm:text-2xl font-bold">ABEL MORO PAJE</h1>
       <div className="flex items-center space-x-4">
         <motion.button
           whileHover={{ scale: 1.1 }}

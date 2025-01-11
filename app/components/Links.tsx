@@ -6,11 +6,11 @@ import { useLanguage } from '../contexts/LanguageContext'
 import translations from '../utils/translations'
 
 const links = [
-  { name: 'GitHub 1', url: 'https://github.com/yourusername1', icon: Github },
-  { name: 'GitHub 2', url: 'https://github.com/yourusername2', icon: Github },
-  { name: 'GitHub 3', url: 'https://github.com/yourusername3', icon: Github },
+  { name: 'GitHub (Personal)', url: 'https://github.com/yourusername1', icon: Github },
+  { name: 'GitHub (Universidad)', url: 'https://github.com/yourusername2', icon: Github },
+  { name: 'GitHub (FP)', url: 'https://github.com/yourusername3', icon: Github },
   { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', icon: Linkedin },
-  { name: 'Europass', url: 'https://europa.eu/europass/en', icon: FileText },
+  { name: 'Europass CV', url: 'https://europa.eu/europass/en', icon: FileText },
 ]
 
 export default function Links() {

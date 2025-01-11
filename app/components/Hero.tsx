@@ -11,25 +11,7 @@ export default function Hero() {
 
   return (
     <section className="py-12 sm:py-20 px-6 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5 dark:opacity-10 z-0">
-        <pre className="text-xs sm:text-sm lg:text-base overflow-hidden h-full">
-          {`function greet(name) {
-  console.log(\`Hello, \${name}!\`);
-}
-
-const technologies = [
-  'JavaScript',
-  'React',
-  'Node.js',
-  'Python',
-  'Git'
-];
-
-technologies.forEach(tech => {
-  console.log(\`I love working with \${tech}!\`);
-});`}
-        </pre>
-      </div>
+      
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -48,8 +30,8 @@ technologies.forEach(tech => {
         className="w-2/3 md:w-1/3 z-10"
       >
         <Image
-          src="/placeholder.svg"
-          alt="Your Name"
+          src="/profile.png"
+          alt="Abel Moro Paje"
           width={300}
           height={300}
           className="rounded-full shadow-lg"
