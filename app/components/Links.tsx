@@ -14,7 +14,7 @@ export default function Links() {
       <div className="content-box">
         <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-center">Conéctate Conmigo</h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 w-full">
-          {links.map((link, index) => (
+          {links.map((link) => (
             <a
               key={link.name}
               href={link.url}
@@ -31,4 +31,3 @@ export default function Links() {
     </section>
   )
 }
-
