@@ -1,43 +1,32 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import { Github, Linkedin, FileText } from 'lucide-react'
-import { useLanguage } from '../contexts/LanguageContext'
-import translations from '../utils/translations'
-
-const links = [
-  { name: 'GitHub (Personal)', url: 'https://github.com/yourusername1', icon: Github },
-  { name: 'GitHub (Universidad)', url: 'https://github.com/yourusername2', icon: Github },
-  { name: 'GitHub (FP)', url: 'https://github.com/yourusername3', icon: Github },
-  { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', icon: Linkedin },
-  { name: 'Europass CV', url: 'https://europa.eu/europass/en', icon: FileText },
-]
 
 export default function Links() {
-  const { language } = useLanguage()
-  const t = translations[language]
+  const links = [
+    { name: 'GitHub (Personal)', url: 'https://github.com/HarkonG', icon: Github },
+    { name: 'GitHub (FP)', url: 'https://github.com/AbelMoroEducaMadrid', icon: Github },
+    { name: 'GitHub (Universidad)', url: 'https://github.com/AbelMoro', icon: Github },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/abel-moro-paje-244605340', icon: Linkedin },
+    { name: 'Europass', url: 'https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/abel-moro+paje/06574dac-3a18-442d-933d-cad7e713bf63?view=html', icon: FileText },
+  ]
 
   return (
     <section className="py-12 sm:py-20 px-6">
-      <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-center">{t.connectWithMe}</h3>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
-        {links.map((link, index) => (
-          <motion.a
-            key={link.name}
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center p-4 bg-gray-100 dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: index * 0.1 }}
-          >
-            <link.icon className="w-6 h-6 sm:w-8 sm:h-8 mb-2" />
-            <span className="text-xs sm:text-sm text-center">{link.name}</span>
-          </motion.a>
-        ))}
+      <div className="content-box">
+        <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-center">Conéctate Conmigo</h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 w-full">
+          {links.map((link, index) => (
+            <a
+              key={link.name}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center p-4 bg-gray-100 dark:bg-gray-800 rounded-lg hover:shadow-md transition-all duration-300 ease-in-out transform hover:scale-105"
+            >
+              <link.icon className="w-6 h-6 sm:w-8 sm:h-8 mb-2" />
+              <span className="text-xs sm:text-sm text-center">{link.name}</span>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   )

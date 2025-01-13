@@ -1,42 +1,26 @@
-'use client'
-
 import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { useLanguage } from '../contexts/LanguageContext'
-import translations from '../utils/translations'
 
 export default function Hero() {
-  const { language } = useLanguage()
-  const t = translations[language]
-
   return (
-    <section className="py-12 sm:py-20 px-6 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
-      
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="w-full md:w-1/2 mb-8 md:mb-0 z-10"
-      >
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t.title}</h2>
+    <section className="py-12 sm:py-20 px-6 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+      <div className="content-box md:w-1/2 flex flex-col justify-center z-10 order-2 md:order-1 h-full">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">Estudiante de Desarrollo de Software</h2>
         <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300">
-          {t.description}
+          Desarrollador de software en formación, apasionado por la creación de soluciones innovadoras y comprometido con el aprendizaje continuo.
         </p>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-        className="w-2/3 md:w-1/3 z-10"
-      >
-        <Image
-          src="/Portfolio/profile.png"
-          alt="Abel Moro Paje"
-          width={300}
-          height={300}
-          className="rounded-full shadow-lg"
-        />
-      </motion.div>
+      </div>
+      <div className="md:w-1/2 z-10 flex flex-col items-center justify-center order-1 md:order-2">
+        <div className="relative mb-4 w-64 h-64 sm:w-80 sm:h-80">
+          <Image
+            src="/Portfolio/profile.png"
+            alt="Foto de Perfil"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-full shadow-lg relative z-10 border-4 border-white dark:border-gray-800"
+          />
+        </div>
+        <h1 className="text-2xl sm:text-3xl font-bold text-center">Abel Moro Paje</h1>
+      </div>
     </section>
   )
 }

@@ -1,11 +1,14 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { ThemeProvider } from './components/theme-provider'
+import StructuredData from './components/StructuredData'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Your Name - Software Development Student',
-  description: 'Portfolio and links for Your Name, a passionate software development student.',
+  title: 'Abel Moro - Portafolio',
+  description: 'Portafolio y enlaces de Abel Moro Paje, un apasionado estudiante de desarrollo de software.',
+  manifest: '/manifest.json',
 }
 
 export default function RootLayout({
@@ -14,8 +17,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>{children}</body>
+    <html lang="es" suppressHydrationWarning>
+      <head>
+        <StructuredData />
+        <link rel="manifest" href="/manifest.json" />
+      </head>
+      <body className={inter.className}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
