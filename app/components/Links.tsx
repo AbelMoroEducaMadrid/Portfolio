@@ -41,5 +41,3 @@ export default function Links({ t }: LinksProps) {
   )
 }
 
-''
-
