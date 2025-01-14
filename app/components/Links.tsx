@@ -2,10 +2,10 @@ import { Github, Linkedin, FileText } from 'lucide-react'
 
 interface LinksProps {
   t: {
-    connectWithMe: string
-    personal: string
-    fp: string
-    universidad: string
+    connectWithMe: string;
+    personal: string;
+    fp: string;
+    universidad: string;
   }
 }
 

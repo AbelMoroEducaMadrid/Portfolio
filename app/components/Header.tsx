@@ -7,7 +7,8 @@ import { useEffect, useState } from 'react'
 
 interface HeaderProps {
   t: {
-    [key: string]: string
+    switchToLightMode: string;
+    switchToDarkMode: string;
   }
   onLanguageChange: (lang: 'es' | 'en') => void
 }

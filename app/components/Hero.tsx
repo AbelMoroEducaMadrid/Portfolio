@@ -1,6 +1,14 @@
 import Image from 'next/image'
 
-export default function Hero({ t }) {
+interface HeroProps {
+  t: {
+    title: string;
+    description: string;
+    name: string;
+  }
+}
+
+export default function Hero({ t }: HeroProps) {
   return (
     <section className="py-12 sm:py-20 px-6 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
       <div className="content-box md:w-1/2 flex flex-col justify-center z-10 order-2 md:order-1 h-full">
