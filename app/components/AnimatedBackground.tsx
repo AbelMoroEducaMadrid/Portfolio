@@ -3,6 +3,8 @@
 import { useEffect, useRef } from 'react'
 import { useTheme } from 'next-themes'
 
+const MAX_PARTICLES = 50
+
 export default function AnimatedBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const { theme } = useTheme()
@@ -20,7 +22,6 @@ export default function AnimatedBackground() {
     canvas.height = window.innerHeight
 
     const particles: Particle[] = []
-    const particleCount = 50
     const connectionDistance = 150
 
     class Particle {
@@ -30,6 +31,7 @@ export default function AnimatedBackground() {
       speedX: number
       speedY: number
       color: string
+      createdAt: number
 
       constructor() {
         this.x = Math.random() * canvas!.width
@@ -38,6 +40,7 @@ export default function AnimatedBackground() {
         this.speedX = Math.random() * 1 - 0.5
         this.speedY = Math.random() * 1 - 0.5
         this.color = `hsl(${Math.random() * 360}, 50%, 50%)`
+        this.createdAt = Date.now()
       }
 
       update() {
@@ -71,13 +74,23 @@ export default function AnimatedBackground() {
     }
 
     function init() {
-      for (let i = 0; i < particleCount; i++) {
+      for (let i = 0; i < MAX_PARTICLES; i++) {
         particles.push(new Particle())
       }
     }
 
     function animate() {
       ctx!.clearRect(0, 0, canvas!.width, canvas!.height)
+      
+      // Remove oldest particle if we're at the limit
+      if (particles.length >= MAX_PARTICLES) {
+        particles.sort((a, b) => a.createdAt - b.createdAt)
+        particles.shift()
+      }
+      
+      // Add a new particle
+      particles.push(new Particle())
+
       for (let i = 0; i < particles.length; i++) {
         particles[i].update()
         particles[i].draw()
