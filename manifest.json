@@ -1,7 +1,7 @@
 {
-  "name": "Your Name - Portfolio",
-  "short_name": "YN Portfolio",
-  "description": "Portfolio of Your Name, a passionate software development student",
+  "name": "Abel Moro - Portfolio",
+  "short_name": "AM Portfolio",
+  "description": "Portfolio of Abel Moro, a passionate software development student",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
