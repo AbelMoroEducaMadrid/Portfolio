@@ -1,29 +1,32 @@
-'use client'
+"use client";
 
-import React, { createContext, useContext, useState, ReactNode } from 'react'
+import React, { createContext, useContext, useState, ReactNode } from "react";
 
 interface BackgroundContextType {
-  backgroundImage: string
-  setBackgroundImage: (url: string) => void
+  backgroundImage: string;
+  setBackgroundImage: (url: string) => void;
 }
 
-const BackgroundContext = createContext<BackgroundContextType | undefined>(undefined)
+const BackgroundContext = createContext<BackgroundContextType | undefined>(
+  undefined
+);
 
 export function BackgroundProvider({ children }: { children: ReactNode }) {
-  const [backgroundImage, setBackgroundImage] = useState('/default-background.jpg')
+  const [backgroundImage, setBackgroundImage] = useState(
+    "/default-background.jpg"
+  );
 
   return (
     <BackgroundContext.Provider value={{ backgroundImage, setBackgroundImage }}>
       {children}
     </BackgroundContext.Provider>
-  )
+  );
 }
 
 export function useBackground() {
-  const context = useContext(BackgroundContext)
+  const context = useContext(BackgroundContext);
   if (context === undefined) {
-    throw new Error('useBackground must be used within a BackgroundProvider')
+    throw new Error("useBackground must be used within a BackgroundProvider");
   }
-  return context
+  return context;
 }
-

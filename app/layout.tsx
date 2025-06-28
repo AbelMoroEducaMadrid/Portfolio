@@ -1,20 +1,21 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-import { ThemeProvider } from './components/theme-provider'
-import StructuredData from './components/StructuredData'
+import "./globals.css";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "./components/theme-provider";
+import StructuredData from "./components/StructuredData";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Abel Moro - Portafolio',
-  description: 'Portafolio y enlaces de Abel Moro Paje, un apasionado estudiante de desarrollo de software.',
-  manifest: '/manifest.json',
-}
+  title: "Abel Moro - Portafolio",
+  description:
+    "Portafolio y enlaces de Abel Moro Paje, un apasionado estudiante de desarrollo de software.",
+  manifest: "/manifest.json",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="es" suppressHydrationWarning>
@@ -28,6 +29,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
-

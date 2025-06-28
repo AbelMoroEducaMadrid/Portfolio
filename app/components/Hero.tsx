@@ -1,11 +1,12 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 interface HeroProps {
   t: {
     title: string;
     description: string;
     name: string;
-  }
+    profilePictureAlt: string;
+  };
 }
 
 export default function Hero({ t }: HeroProps) {
@@ -21,7 +22,7 @@ export default function Hero({ t }: HeroProps) {
         <div className="relative mb-4 w-64 h-64 sm:w-80 sm:h-80">
           <Image
             src="/Portfolio/profile.png"
-            alt="Foto de Perfil"
+            alt={t.profilePictureAlt}
             layout="fill"
             objectFit="cover"
             className="rounded-full shadow-lg relative z-10 border-4 border-white dark:border-gray-800"
@@ -30,6 +31,5 @@ export default function Hero({ t }: HeroProps) {
         <h1 className="text-2xl sm:text-3xl font-bold text-center">{t.name}</h1>
       </div>
     </section>
-  )
+  );
 }
-

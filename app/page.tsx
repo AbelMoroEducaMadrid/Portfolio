@@ -1,22 +1,22 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Links from './components/Links'
-import DownloadCV from './components/DownloadCV'
-import Footer from './components/Footer'
-import SEOMetadata from './components/SEOMetadata'
-import AnimatedBackgroundWrapper from './components/AnimatedBackgroundWrapper'
-import translations from './utils/translations'
+import { useState } from "react";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Links from "./components/Links";
+import DownloadCV from "./components/DownloadCV";
+import Footer from "./components/Footer";
+import SEOMetadata from "./components/SEOMetadata";
+import AnimatedBackgroundWrapper from "./components/AnimatedBackgroundWrapper";
+import translations from "./utils/translations";
 
 export default function Home() {
-  const [language, setLanguage] = useState<'es' | 'en'>('es')
-  const t = translations[language]
+  const [language, setLanguage] = useState<"es" | "en">("es");
+  const t = translations[language];
 
-  const handleLanguageChange = (newLang: 'es' | 'en') => {
-    setLanguage(newLang)
-  }
+  const handleLanguageChange = (newLang: "es" | "en") => {
+    setLanguage(newLang);
+  };
 
   return (
     <>
@@ -30,6 +30,5 @@ export default function Home() {
         <Footer t={t} />
       </main>
     </>
-  )
+  );
 }
-

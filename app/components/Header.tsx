@@ -1,32 +1,32 @@
-'use client'
+"use client";
 
-import { useTheme } from 'next-themes'
-import { Moon, Sun } from 'lucide-react'
-import LanguageSwitcher from './LanguageSwitcher'
-import { useEffect, useState } from 'react'
+import { useTheme } from "next-themes";
+import { Moon, Sun } from "lucide-react";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useEffect, useState } from "react";
 
 interface HeaderProps {
   t: {
     switchToLightMode: string;
     switchToDarkMode: string;
-  }
-  onLanguageChange: (lang: 'es' | 'en') => void
+  };
+  onLanguageChange: (lang: "es" | "en") => void;
 }
 
 export default function Header({ t, onLanguageChange }: HeaderProps) {
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light')
-  }
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   if (!mounted) {
-    return null
+    return null;
   }
 
   return (
@@ -36,9 +36,11 @@ export default function Header({ t, onLanguageChange }: HeaderProps) {
         <button
           onClick={toggleTheme}
           className="rounded-button transition-all duration-300 ease-in-out transform hover:scale-105"
-          aria-label={theme === 'dark' ? t.switchToLightMode : t.switchToDarkMode}
+          aria-label={
+            theme === "dark" ? t.switchToLightMode : t.switchToDarkMode
+          }
         >
-          {theme === 'dark' ? (
+          {theme === "dark" ? (
             <Sun className="w-5 h-5" aria-hidden="true" />
           ) : (
             <Moon className="w-5 h-5" aria-hidden="true" />
@@ -46,6 +48,5 @@ export default function Header({ t, onLanguageChange }: HeaderProps) {
         </button>
       </div>
     </header>
-  )
+  );
 }
-
